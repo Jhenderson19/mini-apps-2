@@ -6,7 +6,8 @@ const mapStateToProps = state => ({
   width: state.width,
   height: state.height,
   board: state.board,
-  gameOver: state.gameOver
+  gameOver: state.gameOver,
+  victory: state.victory
 });
 
 const Minefield = (props) => {
@@ -20,8 +21,8 @@ const Minefield = (props) => {
                 return (<td key={x}>
                   {
                     props.board && props.board.length ?
-                      <Cell x={x} y={y} dispatch={props.dispatch} gameOver={props.gameOver} data={props.board[y][x]} /> :
-                      <Cell x={x} y={y} dispatch={props.dispatch} gameOver={props.gameOver} />
+                      <Cell x={x} y={y} dispatch={props.dispatch} victory={props.victory} gameOver={props.gameOver} data={props.board[y][x]} /> :
+                      <Cell x={x} y={y} dispatch={props.dispatch} victory={props.victory} gameOver={props.gameOver} />
                   }
                 </td>);
               })}

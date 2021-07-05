@@ -5,7 +5,7 @@ import ModeSelect from './code/ModeSelect.jsx';
 import { connect } from 'react-redux';
 import css from './styles/global.css';
 
-const mapStateToProps = state => ({gameOver: state.gameOver});
+const mapStateToProps = state => ({gameOver: state.gameOver, victory: state.victory, mines: state.mines, rMines: state.rMines});
 
 const App = (props) => {
   return (
@@ -15,6 +15,11 @@ const App = (props) => {
           (<h1>Game Over :l</h1>) :
           null
       }
+      {
+        props.victory ?
+          (<h1>You Won!</h1>) :
+          null
+      }
       <StartButton label='beginner'/>
       <StartButton label='intermediate'/>
       <StartButton label='expert'/>
@@ -22,6 +27,9 @@ const App = (props) => {
       <br />
       <br />
       <ModeSelect />
+      <br />
+      <br />
+      Remaining Mines: {props.rMines}
       <Minefield />
     </div>
   );

@@ -4,7 +4,7 @@ export default (pState = initState, action) => {
   if (action.type !== 'newGame') return pState;
 
   var newState = {
-    ...pState,
+    ...initState,
     freshBoard: true,
     mode: 'c',
     gameOver: false,
@@ -35,7 +35,8 @@ export default (pState = initState, action) => {
   }
 
   return {
-    ...pState,
-    ...newState
+    ...initState,
+    ...newState,
+    rMines: newState.mines
   };
 }

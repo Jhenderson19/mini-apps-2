@@ -15,7 +15,7 @@ export default (props) => {
     }
     var countText = props.data.nearMineCount ? props.data.nearMineCount : noText;
 
-    if (props.gameOver) {
+    if (props.gameOver || props.victory) {
       return props.data.mine ?
         (props.data.mark === 'm' ? flagText : minetext) :
         countText;
@@ -41,7 +41,7 @@ export default (props) => {
     if (props.data.checked) {
       return 'TRUE';
     }
-    if (props.gameOver && !props.data.mine) {
+    if ((props.gameOver || props.victory) && !props.data.mine) {
       return 'TRUE';
     }
   }
@@ -55,13 +55,13 @@ export default (props) => {
           classes.push('game-ender');
         } else {
           classes.push('near' + props.data.nearMineCount);
-          if(props.data.mark === 'm') {
-            classes.push('flagged');
-          }
         }
       }
+      if (props.data.mark === 'm') {
+        classes.push('flagged');
+      }
       if (props.gameOver && props.data.mine) {
-        if(props.data.mark !== 'm') {
+        if (props.data.mark !== 'm') {
           classes.push('mine');
         }
       }

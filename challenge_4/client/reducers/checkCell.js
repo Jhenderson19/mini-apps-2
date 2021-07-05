@@ -60,7 +60,7 @@ const clickHandle = (board, cl) => {
 
 
 export default (pState = initState, action) => {
-  if (action.type !== 'checkCell' || pState.gameOver) { return pState; }
+  if (action.type !== 'checkCell' || pState.gameOver || pState.victory) { return pState; }
   let cl = action.payload; //click location
   let newState = { ...pState };
 

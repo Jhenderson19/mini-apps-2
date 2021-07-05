@@ -30,6 +30,7 @@
 .mine {
   color: red;
   font-weight: 3000;
+  border: 2px solid;
   border-color: red;
 }
 .game-ender {
@@ -37,5 +38,5 @@
   background-color: red;
 }
 .flagged {
-  font-size: smaller;
+  font-size: x-small;
 }

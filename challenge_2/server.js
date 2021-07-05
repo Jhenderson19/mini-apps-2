@@ -1,7 +1,7 @@
 //import express stuff
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 3002;
 
 //import libraries
 const path = require('path');
@@ -19,4 +19,4 @@ app.get('/api/btc', (req, res) => {
 
 app.listen(port, () => {
   console.log('bitcoin charter running on port', port);
-})
+});

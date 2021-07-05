@@ -56,8 +56,8 @@ test('expert difficulty should be configured correctly', () => {
 test('insane difficulty should be configured correctly', () => {
   var state = newGame({}, {type: 'newGame', payload: 'insane'});
 
-  expect(state.width).toBe(30);
-  expect(state.height).toBe(30);
+  expect(state.width).toBe(32);
+  expect(state.height).toBe(28);
   expect(state.mines).toBe(300);
 });
 

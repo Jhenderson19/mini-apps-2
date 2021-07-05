@@ -20,10 +20,10 @@ const App = (props) => {
           (<h1>You Won!</h1>) :
           null
       }
-      <StartButton label='beginner'/>
-      <StartButton label='intermediate'/>
-      <StartButton label='expert'/>
-      <StartButton label='insane'/>
+      <StartButton label='Beginner'/>
+      <StartButton label='Intermediate'/>
+      <StartButton label='Expert'/>
+      <StartButton label='Insane'/>
       <br />
       <br />
       <ModeSelect />

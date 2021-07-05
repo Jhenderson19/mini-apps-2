@@ -10,7 +10,7 @@ export default (pState = initState, action) => {
     gameOver: false,
     board: []
   }
-  switch(action.payload) {
+  switch(action.payload.toLowerCase()) {
     case 'beginner':
     default:
       newState.width = 9;
@@ -28,8 +28,8 @@ export default (pState = initState, action) => {
       newState.mines = 99;
       break;
     case 'insane':
-      newState.width = 30;
-      newState.height = 30;
+      newState.width = 32;
+      newState.height = 28;
       newState.mines = 300;
       break;
   }
